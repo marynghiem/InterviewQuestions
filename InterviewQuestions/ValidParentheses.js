@@ -19,3 +19,23 @@ var isValid = function (s) {
   }
   return stck.length ? false : true;
 };
+
+//looked at reference
+//hashmap and stack
+var isValid = function (s) {
+  //create a hash
+  let hashMap = {
+    ")": "(",
+    "}": "{",
+    "]": "[",
+  };
+  let stck = [];
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(" || s[i] === "[" || s[i] === "{") {
+      stck.push(s[i]);
+    } else if (stck[stck.length - 1] === hashMap[s[i]]) {
+      stck.pop();
+    } else return false;
+  }
+  return stck.length ? false : true;
+};
