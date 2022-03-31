@@ -1,10 +1,13 @@
 //https://leetcode.com/problems/3sum/submissions/
 
 //brute force
+//time complexity: n^3
+//space complexity: nC3
 var threeSum = function (nums) {
   const answer = [];
-  nums.sort((a, b) => a - b);
+  nums.sort((a, b) => a - b); //time: nlog(n) n is how long numbers is
   for (let i = 0; i < nums.length; i++) {
+    //time: n^3
     if (i > 0 && nums[i] === nums[i - 1]) {
       continue;
     }
@@ -26,10 +29,13 @@ var threeSum = function (nums) {
 };
 
 //efficient method
+//time complexity: n^2
+//space complexity: nC3
 var threeSum = function (nums) {
-  nums.sort((a, b) => a - b);
+  nums.sort((a, b) => a - b); // n*log(n)
   const answer = [];
   for (let i = 0; i < nums.length; i++) {
+    // O(n)
     if (i > 0 && nums[i] === nums[i - 1]) {
       continue;
     }
@@ -37,6 +43,7 @@ var threeSum = function (nums) {
     let left = i + 1;
     let right = nums.length - 1;
     while (right > left) {
+      // O(n)
       const sum = nums[left] + nums[right];
       if (sum > target) {
         right--;
