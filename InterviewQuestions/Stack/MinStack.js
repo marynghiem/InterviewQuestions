@@ -1,5 +1,6 @@
 //https://leetcode.com/problems/min-stack/
 
+//practice again later
 var MinStack = function () {
   this.stack = [];
   this.min = [];

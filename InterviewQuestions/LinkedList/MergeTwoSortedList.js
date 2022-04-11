@@ -15,7 +15,7 @@ var mergeTwoLists = function (list1, list2) {
     current = current.next; //increment current
   }
   if (list1) {
-    current.next = list1;
+    current.next = list1; //adding list 1 and 2 if the length list1 & 2 is longer
   }
   if (list2) {
     current.next = list2;
