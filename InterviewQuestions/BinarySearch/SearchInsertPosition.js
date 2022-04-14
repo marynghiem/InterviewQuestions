@@ -8,7 +8,7 @@ var searchInsert = function (nums, target) {
   while (left < right) {
     let middle = Math.floor((left + right) / 2);
     if (newArr[middle] < target) {
-      left = middle + 1; // this is because floor rounds down, so you want to add one to account for it
+      left = middle + 1;
     } else {
       right = middle;
     }
