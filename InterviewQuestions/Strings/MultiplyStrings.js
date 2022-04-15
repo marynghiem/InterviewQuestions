@@ -1,5 +1,6 @@
 //https://leetcode.com/problems/multiply-strings/
 
+//need to try again later
 var multiply = function (num1, num2) {
   const result = Array(num1.length + num2.length).fill(0);
   //creates an array with the largest amount of space that the //two numbers can multiply up to
