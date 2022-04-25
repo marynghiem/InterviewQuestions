@@ -17,3 +17,5 @@ var numIdenticalPairs = function (nums) {
   console.log(answer);
   return answer.length;
 };
+
+//hashmap solution
