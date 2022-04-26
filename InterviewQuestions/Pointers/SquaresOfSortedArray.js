@@ -1,5 +1,6 @@
 //https://leetcode.com/problems/squares-of-a-sorted-array/
 
+//have to try again later
 var sortedSquares = function (nums) {
   let result = [];
   let left = 0;
