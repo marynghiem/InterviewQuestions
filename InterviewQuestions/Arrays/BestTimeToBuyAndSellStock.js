@@ -15,3 +15,4 @@ var maxProfit = function (prices) {
 };
 
 //tried again after looking at solution. try again later.
+//completed again w jackie.
