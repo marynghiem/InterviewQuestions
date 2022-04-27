@@ -1,14 +1,5 @@
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
+//https://leetcode.com/problems/reverse-linked-list/submissions/
+
 var reverseList = function (head) {
   let current = head;
   let previous = null;
@@ -21,3 +12,15 @@ var reverseList = function (head) {
   }
   return previous; //returning all previous values
 };
+
+//using recursion
+function reverseList(head) {
+  if (head == null || head.next == null) {
+    return head;
+  } else {
+    let reversedHead = reverseList(head.next);
+    head.next.next = head;
+    head.next = null;
+    return reversedHead;
+  }
+}
