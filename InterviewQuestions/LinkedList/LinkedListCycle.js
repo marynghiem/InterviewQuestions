@@ -13,7 +13,7 @@ var hasCycle = function (head) {
   return false;
 };
 
-//correct solution with slow and fast method
+//correct solution with slow and fast method. need to memorize, try again later
 var hasCycle = function (head) {
   if (head == null) {
     return false;
