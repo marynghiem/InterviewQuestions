@@ -15,12 +15,19 @@ var createTargetArray = function (nums, index) {
 };
 
 //correct solution and simiplied
-//what i learned:
+//what i learned: i added additional code that wasnt needed. try and be more concise.
+//also learned splice:
+//const arr = ['a', 'b', 'd'];
+
+//let start = 2;
+//let deleteCount = 0;
+//arr.splice(start, deleteCount, 'c');
+// ['a', 'b', 'c', 'd'];
+
 var createTargetArray = function (nums, index) {
   let answer = [];
   for (let i = 0; i < index.length; i++) {
     answer.splice(index[i], 0, nums[i]);
   }
-  console.log(answer);
   return answer;
 };
