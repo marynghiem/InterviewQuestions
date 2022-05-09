@@ -36,3 +36,18 @@ var missingNumber = function (nums) {
     }
   }
 };
+
+//most efficient solution
+//time complexity o(n)
+//space complexity o(1)
+var missingNumber = function (nums) {
+  let total = 0;
+  for (let i = 0; i <= nums.length; i++) {
+    total = total + i;
+  }
+  let missingTotal = 0;
+  for (let i = 0; i < nums.length; i++) {
+    missingTotal = missingTotal + nums[i];
+  }
+  return total - missingTotal;
+};
