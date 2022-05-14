@@ -11,7 +11,6 @@ var groupAnagrams = function (strs) {
     //if it is, push the str as a value into the has
     //ex: 'a,e,t':['eat','tea', 'ate]
   });
-
   const keys = Object.keys(hash);
   //keys['a,e,t', 'a,n,t']
   const values = keys.map((v) => {
