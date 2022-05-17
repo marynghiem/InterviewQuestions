@@ -24,6 +24,7 @@ var addTwoNumbers = function (l1, l2) {
   return result.next;
 };
 
+//second attempt is incorrect because i forgot about the if statement at the end for edge case.
 var addTwoNumbers = function (l1, l2) {
   let sum = 0;
   let current = new ListNode(0);
@@ -41,6 +42,8 @@ var addTwoNumbers = function (l1, l2) {
     current = current.next;
     sum > 9 ? (sum = 1) : (sum = 0);
   }
-
+  //if (sum) {
+  //    current.next = new ListNode(sum); //if there is leftover in the sum
+  // }
   return result.next;
 };
