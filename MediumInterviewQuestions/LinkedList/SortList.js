@@ -79,3 +79,58 @@ function merge(l1, l2) {
   else tail.next = l1;
   return dummy.next;
 }
+
+//second attempt at sort list
+var sortList = function (head) {
+  if ((head = null)) {
+    // this should be double equals not single equal bc single is assignment
+    // forgot || head.next == null
+    return head;
+  }
+  let middle = getMiddle(head);
+  let nMiddle = middle.next;
+  middle.next = null;
+  let l1 = sortList(head);
+  let l2 = sortList(nMiddle);
+  return Merge(l1, l2);
+};
+
+const getMiddle = (head) => {
+  let slow = head;
+  let fast = head;
+  while (slow && fast) {
+    //fast.next !== null && fast.next.next !== null
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  return slow;
+};
+
+const Merge = (l1, l2) => {
+  //do not capitalize names of functions
+  if (l1 === null) {
+    return l2;
+  }
+  if (l2 === null) {
+    return l1;
+  }
+  let tail = new listNode(0);
+  let dummy = tail;
+  while (l1 && l2) {
+    if (l1.val < l2.val) {
+      tail.next = l1;
+      //tail =tail.next;
+      l1 = l1.next;
+    } else {
+      tail.next = l2;
+      //tail = tail.next;
+      l2 = l2.next;
+    }
+  }
+  if (l1 === null) {
+    tail.next = l2;
+  } else if (l2 === null) {
+    tail.next = l1;
+  }
+  return dummy.next;
+};

@@ -1,5 +1,6 @@
 //https://leetcode.com/problems/game-of-life/
 
+//looked up solution but need to redo again
 var gameOfLife = function (board) {
   const copyOfBoard = board.map((arr) => [...arr]); //creating a copy of the board
   const directions = [
