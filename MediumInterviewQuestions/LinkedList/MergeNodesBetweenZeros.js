@@ -1,5 +1,6 @@
 //https://leetcode.com/problems/merge-nodes-in-between-zeros/
 
+//first attempt without looking at solution
 var mergeNodes = function (head) {
   let newList = new ListNode(0);
   let dummy = newList;
