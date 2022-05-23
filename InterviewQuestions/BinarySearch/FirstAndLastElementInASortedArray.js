@@ -28,3 +28,34 @@ var searchRange = function (nums, target) {
   }
   return result;
 };
+
+//correct solution with log(n)
+var searchRange = function (nums, target) {
+  let result = [-1, -1];
+  let first = 0;
+  let end = nums.length - 1;
+  while (first < end) {
+    let middle = Math.floor((first + end) / 2);
+    if (target > nums[middle]) {
+      first = middle + 1;
+    } else {
+      end = middle;
+    }
+  }
+  if (nums[first] !== target) {
+    return result;
+  } else {
+    result[0] = first;
+  }
+  end = nums.length - 1;
+  while (first < end) {
+    let middle = Math.floor((first + end) / 2 + 1);
+    if (nums[middle] > target) {
+      end = middle - 1;
+    } else {
+      first = middle;
+    }
+  }
+  result[1] = end;
+  return result;
+};
