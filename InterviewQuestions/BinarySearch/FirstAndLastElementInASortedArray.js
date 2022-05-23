@@ -31,24 +31,35 @@ var searchRange = function (nums, target) {
 
 //correct solution with log(n)
 var searchRange = function (nums, target) {
-  let result = [-1, -1];
-  let first = 0;
-  let end = nums.length - 1;
+  let result = [-1, -1]; //return this if theres no target number
+  let first = 0; //pointer that starts from left
+  let end = nums.length - 1; //pointer that starts from the end
+
+  //first binary search
   while (first < end) {
+    //finding the middle
     let middle = Math.floor((first + end) / 2);
+    //if target is bigger than middle number
     if (target > nums[middle]) {
+      //reassign first to the middle + 1;
       first = middle + 1;
     } else {
+      //if target is equal or smaller
+      //set the end equal to the middle
       end = middle;
     }
   }
+  //after the first binary search
   if (nums[first] !== target) {
     return result;
   } else {
     result[0] = first;
   }
   end = nums.length - 1;
+
+  //second binary search
   while (first < end) {
+    // Make mid biased to the right
     let middle = Math.floor((first + end) / 2 + 1);
     if (nums[middle] > target) {
       end = middle - 1;
