@@ -49,7 +49,7 @@ var searchRange = function (nums, target) {
       end = middle;
     }
   }
-  //after the first binary search
+  //after the first binary search, check to see if the first is equal to target, it is not in the array and return the result
   if (nums[first] !== target) {
     return result;
   } else {
@@ -61,6 +61,7 @@ var searchRange = function (nums, target) {
   while (first < end) {
     // Make mid biased to the right
     let middle = Math.floor((first + end) / 2 + 1);
+    //if middle number is bigger than target
     if (nums[middle] > target) {
       end = middle - 1;
     } else {
