@@ -1,6 +1,8 @@
 //https://leetcode.com/problems/split-array-largest-sum/
 
 //similar to capacity to ship problem
+//nums = [7,2,5,10,8], m = 2
+//output: 18
 var splitArray = function (nums, m) {
   const feasible = (threshold) => {
     let total = 0;
