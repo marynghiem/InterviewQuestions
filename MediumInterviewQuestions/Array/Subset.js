@@ -1,8 +1,8 @@
 //https://leetcode.com/problems/subsets/
 
 var subsets = function (nums) {
-  let result = [];
-  dfs([], 0);
+  let result = []; //created an empty array
+  dfs([], 0); //calling the function created below
 
   function dfs(current, index) {
     result.push(current);
