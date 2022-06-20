@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/unique-paths/submissions/
+
 var uniquePaths = function (m, n) {
   const table = Array.from({ length: m }, () => new Array(n));
 
