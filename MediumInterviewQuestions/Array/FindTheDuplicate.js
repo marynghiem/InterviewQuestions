@@ -13,6 +13,7 @@ var findDuplicate = function (nums) {
 };
 
 //time complexity o(n)
+//space complexity o(n)
 //using sets
 var findDuplicate = function (nums) {
   let seen = new Set();
@@ -22,4 +23,23 @@ var findDuplicate = function (nums) {
     }
     seen.add(num);
   }
+};
+
+//time complexity o(n)
+//space complexity o(1)
+//Negative Marking technique
+var findDuplicate = function (nums) {
+  let duplicate = -1;
+  for (let i = 0; i < nums.length; i++) {
+    let current = Math.abs(nums[i]);
+    if (nums[current] < 0) {
+      duplicate = current;
+      break;
+    }
+    nums[current] = -nums[current];
+  }
+  for (let i = 0; i < nums.length; i++) {
+    nums[i] = Math.abs(nums[i]);
+  }
+  return duplicate;
 };
