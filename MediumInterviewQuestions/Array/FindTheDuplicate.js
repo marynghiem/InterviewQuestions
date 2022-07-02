@@ -29,11 +29,12 @@ var findDuplicate = function (nums) {
 //space complexity o(1)
 //Negative Marking technique
 var findDuplicate = function (nums) {
-  let duplicate = -1;
+  let duplicate = -1; //start by initializing duplicate as -1
   for (let i = 0; i < nums.length; i++) {
-    let current = Math.abs(nums[i]);
+    let current = Math.abs(nums[i]); //start by looping through and turning current into an absolute number
     if (nums[current] < 0) {
-      duplicate = current;
+      //
+      duplicate = current; //if theres a duplicate, break out of the loop
       break;
     }
     nums[current] = -nums[current];
