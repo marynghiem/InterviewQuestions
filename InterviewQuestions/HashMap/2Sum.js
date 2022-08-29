@@ -15,3 +15,14 @@ const twoSum = function (nums, target) {
 
 //Solve again without looking at previous method
 //solved again on June 29th
+//attempt on August 29
+var SecongSum = function (nums, target) {
+  let obj = {};
+  for (let i = 0; i < nums.length; i++) {
+    let remainder = target - nums[i];
+    if (remainder in obj) {
+      return [obj[remainder], i];
+    }
+    obj[nums[i]] = i;
+  }
+};
