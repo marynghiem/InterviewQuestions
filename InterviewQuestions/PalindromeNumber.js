@@ -29,3 +29,20 @@ var isPalindrome = function (x) {
 
 //Try and solve without changing into a string
 //Try and solve without searching up methods
+
+//third try
+//using pointers
+var isPalindrome = function (x) {
+  let answer = true;
+  let newX = x.toString();
+  let left = 0;
+  let right = newX.length - 1;
+  while (left < right) {
+    if (newX[left] !== newX[right]) {
+      answer = false;
+    }
+    left++;
+    right--;
+  }
+  return answer;
+};
