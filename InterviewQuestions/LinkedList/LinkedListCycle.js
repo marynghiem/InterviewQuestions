@@ -29,3 +29,23 @@ var hasCycle = function (head) {
   }
   return true;
 };
+
+//third attempt
+//fastest attempt
+// did 90% of this on my own
+var hasCycle = function (head) {
+  if (head == null) {
+    return false;
+  }
+
+  let slow = head;
+  let fast = head.next;
+  while (slow !== null) {
+    if (slow === fast) {
+      return true;
+    }
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  return false;
+};
