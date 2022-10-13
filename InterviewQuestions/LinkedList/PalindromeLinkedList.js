@@ -56,3 +56,38 @@ var reverseList = function (head) {
   }
   return previous; //returning all previous values
 };
+
+//attempted on my own, made a couple mistakes regarding calling function and putting the wrong parameter
+//made mistakes regarding the condition statement in the while loop
+var isPalindrome = function (head) {
+  let slow = head;
+  let fast = head;
+  while (fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  slow.next = reverse(slow.next);
+  slow = slow.next;
+  while (slow) {
+    if (slow.val === head.val) {
+      slow = slow.next;
+      head = head.next;
+    } else {
+      return false;
+    }
+  }
+  return true;
+};
+
+const reverse = (head) => {
+  let prev = null;
+  let current = head;
+  let next;
+  while (current) {
+    next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+};
