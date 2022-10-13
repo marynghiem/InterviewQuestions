@@ -38,3 +38,18 @@ var reverseList = function (head) {
   }
   return prev;
 };
+
+//attempted again but made a mistake regarding what I returned. I returned the head instead of prev;
+var reverseList = function (head) {
+  let prev = null; //created prev, current and a next
+  let current = head;
+  let next;
+  while (current !== null) {
+    //while loop until current is null
+    next = current.next; //remember the next one after current
+    current.next = prev; // changing the pointer so that it goes to the previous
+    prev = current; //previous moves foward
+    current = next; //current moves foward
+  }
+  return prev;
+};
