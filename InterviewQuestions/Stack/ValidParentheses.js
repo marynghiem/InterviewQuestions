@@ -39,3 +39,23 @@ var isValid = function (s) {
   }
   return stck.length ? false : true;
 };
+
+//attempted again but made a mistake at the else if condition.
+var isValid = function (s) {
+  let stack = [];
+  for (let i = 0; i < s.length; i++) {
+    let lastStackEl = stack[stack.length - 1];
+    if (s[i] === "(" || s[i] === "{" || s[i] === "[") {
+      stack.push(s[i]);
+    } else if (
+      (s[i] === ")" && lastStackEl === "(") ||
+      (s[i] === "}" && lastStackEl === "{") ||
+      (s[i] === "]" && lastStackEl === "[")
+    ) {
+      stack.pop();
+    } else {
+      return false;
+    }
+  }
+  return stack.length ? false : true;
+};
