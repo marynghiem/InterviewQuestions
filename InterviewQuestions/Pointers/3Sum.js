@@ -60,3 +60,38 @@ var threeSum = function (nums) {
   }
   return answer;
 };
+
+//second attempt of 3Sum:
+//forgot to sort the problem
+//when creating the if then statement to continue if a repeating number is seen, i used the wrong condition
+var threeSum = function (nums) {
+  nums.sort((a, b) => a - b);
+  let answer = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) {
+      continue;
+    }
+    let target = 0 - nums[i];
+    let left = i + 1;
+    let right = nums.length - 1;
+    while (left < right) {
+      let sum = nums[left] + nums[right];
+      if (sum > target) {
+        right--;
+      } else if (sum < target) {
+        left++;
+      } else {
+        answer.push([nums[i], nums[left], nums[right]]);
+        while (nums[left] === nums[left + 1]) {
+          left++;
+        }
+        while (nums[right] === nums[right - 1]) {
+          right--;
+        }
+        left++;
+        right--;
+      }
+    }
+  }
+  return answer;
+};
