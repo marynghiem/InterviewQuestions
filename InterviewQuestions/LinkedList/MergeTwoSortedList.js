@@ -62,3 +62,19 @@ var mergeTwoLists = function (list1, list2) {
   }
   return dummy.next;
 };
+
+//solved the problem using recursion
+var mergeTwoLists = function (list1, list2) {
+  if (list1 === null) {
+    return list2;
+  } else if (list2 === null) {
+    return list1;
+  }
+
+  if (list1.val > list2.val) {
+    [list1, list2] = [list2, list1]; // Swap in place
+  }
+  list1.next = mergeTwoLists(list1.next, list2);
+
+  return list1;
+};
