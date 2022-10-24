@@ -66,14 +66,17 @@ var mergeTwoLists = function (list1, list2) {
 //solved the problem using recursion
 var mergeTwoLists = function (list1, list2) {
   if (list1 === null) {
-    return list2;
+    return list2; //base case
   } else if (list2 === null) {
-    return list1;
+    return list1; //base case
   }
 
   if (list1.val > list2.val) {
+    //if value of list1 is greater than list2
     [list1, list2] = [list2, list1]; // Swap in place
+    //list2 will go next
   }
+  //using recursion to set the next item in list1
   list1.next = mergeTwoLists(list1.next, list2);
 
   return list1;

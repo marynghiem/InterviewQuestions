@@ -95,3 +95,43 @@ var threeSum = function (nums) {
   }
   return answer;
 };
+
+//attempted 3sum again
+//notes: got 90% correct just missed the //
+var threeSum = function (nums) {
+  let result = [];
+  //(a,b) => a - b
+  nums.sort((a, b) => a - b);
+  for (let i = 0; i < nums.length; i++) {
+    //missed the continue to break out of this loop
+    if (i > 0 && nums[i] === nums[i - 1]) {
+      continue;
+    }
+    let target = 0 - nums[i];
+    let left = i + 1;
+    let right = nums.length - 1;
+    while (left < right) {
+      let sum = nums[left] + nums[right];
+      if (sum === target) {
+        result.push([nums[i], nums[left], nums[right]]);
+
+        //did not include the while loops when there is the same number on repeat
+        while (nums[left] === nums[left + 1]) {
+          left++;
+        }
+        while (nums[right] === nums[right - 1]) {
+          right--;
+        }
+        left++;
+        right--;
+      }
+      if (sum > target) {
+        right--;
+      }
+      if (sum < target) {
+        left++;
+      }
+    }
+  }
+  return result;
+};
