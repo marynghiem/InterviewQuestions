@@ -81,3 +81,45 @@ var mergeTwoLists = function (list1, list2) {
 
   return list1;
 };
+
+//completed merge two sorted list without making listnode
+var mergeTwoLists = function (list1, list2) {
+  if (!list1) {
+    return list2;
+  }
+  if (!list2) {
+    return list1;
+  }
+  let prev;
+  let first;
+  let result;
+  let second;
+  if (list1.val <= list2.val) {
+    prev = list1;
+    first = list1.next;
+    second = list2;
+  } else {
+    prev = list2;
+    first = list1;
+    second = list2.next;
+  }
+  result = prev;
+  while (first && second) {
+    if (first.val <= second.val) {
+      prev.next = first;
+      first = first.next;
+      prev = prev.next;
+    } else {
+      prev.next = second;
+      second = second.next;
+      prev = prev.next;
+    }
+  }
+  if (first) {
+    prev.next = first;
+  }
+  if (second) {
+    prev.next = second;
+  }
+  return result;
+};
