@@ -44,13 +44,19 @@ var lengthOfLongestSubstring = function (s) {
 };
 
 //solution to longest substring
+//sliding window
 function lengthOfLongestSubstring(s) {
+  //set that shows the numbers that I have seen
   let seen = new Set();
+  //return the answer
   let longest = 0;
+  //left
   let l = 0;
+  //for loop for right
   for (let r = 0; r < s.length; r++) {
+    //if the set has the letter, delete and increment left
     while (seen.has(s[r])) {
-      seen.delete(s[l]);
+      seen.delete(s[l]); //delete the left side until seen does not have s[r] anymore
       l++;
     }
     seen.add(s[r]);
@@ -58,3 +64,22 @@ function lengthOfLongestSubstring(s) {
   }
   return longest;
 }
+//showing what is in the set
+/*
+Set(1) { 'a' }
+Set(2) { 'a', 'b' }
+Set(3) { 'a', 'b', 'c' }
+Set(2) { 'b', 'c' }
+Set(3) { 'b', 'c', 'a' }
+Set(2) { 'c', 'a' }
+Set(3) { 'c', 'a', 'b' }
+Set(2) { 'a', 'b' }
+Set(3) { 'a', 'b', 'c' }
+Set(2) { 'b', 'c' }
+Set(1) { 'c' }
+Set(2) { 'c', 'b' }
+Set(1) { 'b' }
+Set(0) {}
+Set(1) { 'b' }
+
+*/
