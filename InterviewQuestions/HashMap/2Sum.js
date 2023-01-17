@@ -26,3 +26,16 @@ var SecondSum = function (nums, target) {
     obj[nums[i]] = i;
   }
 };
+
+//Third attempt
+var Sum = function (nums, target) {
+  let hash = {};
+  for (let i = 0; i < nums.length; i++) {
+    let check = target - nums[i];
+    if (check in hash) {
+      //only mistake was that I wrote hash.has(check) which is used for set.
+      return [hash[check], i];
+    }
+    hash[nums[i]] = i;
+  }
+};
