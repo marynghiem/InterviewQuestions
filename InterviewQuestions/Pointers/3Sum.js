@@ -156,12 +156,14 @@ var threeSum = function (nums) {
           left++;
         }
         while (nums[right] === nums[right - 1]) {
+          //made if statements
           right--;
         }
         left++;
         right--;
       }
       if (sum > target) {
+        // forgot about the if statement
         right--;
       }
       if (sum < target) {

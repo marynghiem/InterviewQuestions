@@ -46,3 +46,18 @@ var isPalindrome = function (x) {
   }
   return answer;
 };
+//fouth attempt
+var isPalindrome = function (x) {
+  let letters = x.toString().split("");
+  let left = 0;
+  let right = letters.length - 1;
+  while (left <= right) {
+    if (letters[left] === letters[right]) {
+      left++;
+      right--;
+    } else {
+      return false;
+    }
+  }
+  return true;
+};
