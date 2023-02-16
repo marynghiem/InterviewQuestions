@@ -136,7 +136,7 @@ var mergeTwoLists = function (list1, list2) {
       current.next = list2;
       list2 = list2.next;
     }
-    current = current.next;
+    current = current.next; //forgot to incremenet current
   }
   if (list1) {
     current.next = list1;
