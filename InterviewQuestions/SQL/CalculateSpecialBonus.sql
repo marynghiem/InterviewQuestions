@@ -59,3 +59,18 @@ select employee_id, 0 as bonus
 from Employees
 where employee_id%2 = 0 or name like 'M%'
 ORDER by employee_id; 
+
+
+/*Second solution
+
+Here '*' means simply multiply
+if employeeid is even then ( employee id %2 return 1 )
+if( name is not start with M then it return 1
+else return 0
+if return value is zero , then on multiplying with salary bonus become 0
+else bonus is equal to salary
+
+*/
+select employee_id , salary * ( employee_id%2 ) * ( name not like 'M%') as bonus
+from employees
+order by employee_id;
