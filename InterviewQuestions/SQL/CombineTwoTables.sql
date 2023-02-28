@@ -67,5 +67,3 @@ addressId = 1 contains information about the address of personId = 2.
 SELECT Person.firstName, Person.lastName, Address.city, Address.state FROM Person LEFT JOIN Address ON 
 Person.personId = Address.personId;
 
---using left join
-select name as customers from customers left join orders on customers.id = orders.customerId where orders.customerId is null
