@@ -34,6 +34,8 @@ var myPow = function (x, n) {
 
   let pow = Math.abs(n);
 
+  //if the power is even then call on the function and multiply the two numbers
+  //got it wrong bc i forgot about my knowledge on powers
   let result = pow % 2 === 0 ? myPow(x * x, pow / 2) : myPow(x * x, (pow - 1) / 2) * x;
 
   return n < 0 ? 1 / result : result;
