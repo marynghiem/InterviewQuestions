@@ -65,3 +65,29 @@ function helper(left, right, s) {
   //returning the string that is a palidrome
   return curr;
 }
+
+//attempted again
+var longestPalindrome = function (s) {
+  if (s.length < 2) {
+    return s;
+  }
+  let max = "";
+  for (let i = 0; i < s.length; i++) {
+    let left = helper(i, i, s);
+    let right = helper(i, i + 1, s);
+    let currentMax = left.length > right.length ? left : right;
+    currentMax.length > max.length ? (max = currentMax) : max;
+  }
+  return max;
+};
+
+const helper = (left, right, s) => {
+  let palindrome = "";
+  while (left >= 0 && right < s.length && s[left] === s[right]) {
+    //need to learn substring
+    palindrome = s.substring(left, right + 1);
+    left--;
+    right++;
+  }
+  return palindrome;
+};
