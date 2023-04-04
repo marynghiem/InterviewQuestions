@@ -16,7 +16,7 @@ const leftCheckFunc = (root, left) => {
   if (root.val <= left.val) {
     return false;
   }
-  return leftCheckFunc(root.left, root.left.left);
+  return leftCheckFunc(root.left, root.left.left) && leftCheckFunc(root.right, root.right.left);
 };
 
 const rightCheckFunc = (root, right) => {
@@ -26,7 +26,7 @@ const rightCheckFunc = (root, right) => {
   if (root.val >= right.val) {
     return false;
   }
-  return rightCheckFunc(root.right, root.right.right);
+  return rightCheckFunc(root.right, root.right.right) && leftCheckFunc(root.right, root.right.left);
 };
 
 //correct solution
@@ -39,4 +39,9 @@ var isValidBST = function (root) {
     if (root.val <= min || root.val >= max) return false;
     return dfs(root.left, min, root.val) && dfs(root.right, root.val, max);
   }
+};
+// wrong common solution
+const validBST = (root) => {
+  if (!root) return true;
+  return validBST(root.left) && validBST(root.right) && root.value < root.right.value && root.value > root.left.value;
 };
