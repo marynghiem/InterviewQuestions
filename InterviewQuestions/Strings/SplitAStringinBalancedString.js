@@ -33,21 +33,30 @@ s[i] is either 'L' or 'R'.
 s is a balanced string.
 */
 
+//comeback later
 var balancedStringSplit = function (s) {
+  //the count of balanced strings
   let totalBalanced = 0;
+  //indexes
   let left = 0;
   let right = 0;
+  //to check if they are balanced
   let letterLcount = 0;
   let letterRcount = 0;
+  //while loop
   while (right < s.length) {
+    //for the count of l or r
     if (s[right] === "L") {
       letterLcount++;
     } else {
       letterRcount++;
     }
+    //increment after count
     right++;
+    //if l and r count are equal, increase the total balanced
     if (letterLcount === letterRcount) {
       totalBalanced++;
+      //left is not really needed
       left = right;
       letterLcount = 0;
       letterRcount = 0;
