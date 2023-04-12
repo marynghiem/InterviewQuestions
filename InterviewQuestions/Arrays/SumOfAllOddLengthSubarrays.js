@@ -54,25 +54,30 @@ var sumOddLengthSubarrays = function (arr) {
 // Using Sliding Window
 // time O(N^2) space O(N)
 const sumOddLengthSubarrays = (arr) => {
+  //start at an odd number and only increment by 2
   let oddLength = 1;
+  //answer that is going to be returned
   let sum = 0;
 
+  //while loop
   while (oddLength <= arr.length) {
+    //current sum
     let currentSum = 0;
-
+    //adding all the numbers up to current odd index
     for (let i = 0; i < oddLength; i++) {
       currentSum += arr[i];
     }
-
+    //add the current sum to main sum
     sum += currentSum;
 
+    //sliding window, where you add the next number and subtract the next.
     for (let i = oddLength; i < arr.length; i++) {
       currentSum = currentSum + arr[i] - arr[i - oddLength];
       sum += currentSum;
     }
-
+    //only increment by 2
     oddLength += 2;
   }
-
+  // return sum
   return sum;
 };
