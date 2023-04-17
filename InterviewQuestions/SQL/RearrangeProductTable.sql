@@ -14,7 +14,9 @@ Each row in this table indicates the product's price in 3 different stores: stor
 If the product is not available in a store, the price will be null in that store's column.
  
 
-Write an SQL query to rearrange the Products table so that each row has (product_id, store, price). If a product is not available in a store, do not include a row with that product_id and store combination in the result table.
+Write an SQL query to rearrange the Products table so that each row has (product_id, store, price).
+ If a product is not available in a store,
+  do not include a row with that product_id and store combination in the result table.
 
 Return the result table in any order.
 

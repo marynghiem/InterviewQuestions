@@ -23,7 +23,7 @@ Example 3:
 
 Input: arr = [10,20,30], fn = function constant() { return 42; }
 Output: [42,42,42]
-Explanation: The function always returns 42.
+Explanation: The function always returns 42. 
 */
 
 var map = function (arr, fn) {

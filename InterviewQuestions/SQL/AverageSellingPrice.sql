@@ -20,7 +20,10 @@ JOIN prices p ON 1=1
     AND p.product_id = u.product_id 
     AND u.purchase_date BETWEEN p.start_date AND p.end_date
 Note: you might wonder why that "ON 1=1" is there. It doesn't actually do anything at all; it is just a trick 
-that allows us to separate the real logical steps of our join onto separate lines for readability's sake. Since 1=1 is always True, then 1=1 AND other_condition will only depend on other_condition, so we can add it to the join without it affecting anything. Note on the Note: if you are using OR rather than AND, then putting 1=0 will have the same effect.
+that allows us to separate the real logical steps of our join onto separate lines for readability's sake. Since 1=1 is always True,
+ then 1=1 AND other_condition will only depend on other_condition, 
+ so we can add it to the join without it affecting anything. Note on the Note: if you are using OR rather than AND,
+  then putting 1=0 will have the same effect.
 
 2. How do we calculate this weird average? We're provided the following formula to calculate the average price,
  Average selling price = Total Price of Product / Number of products sold. So how do we get these numbers? 

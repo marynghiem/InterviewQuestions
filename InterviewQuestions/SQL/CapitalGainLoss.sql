@@ -17,7 +17,8 @@ It is guaranteed that each 'Sell' operation for a stock has a corresponding 'Buy
 
 Write an SQL query to report the Capital gain/loss for each stock.
 
-The Capital gain/loss of a stock is the total gain or loss after buying and selling the stock one or many times.
+The Capital gain/loss of a stock is the total gain
+ or loss after buying and selling the stock one or many times.
 
 Return the result table in any order.
 

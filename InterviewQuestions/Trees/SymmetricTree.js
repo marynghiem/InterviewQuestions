@@ -22,7 +22,7 @@ const dfs = (leftNode, rightNode) => {
   return dfs(leftNode.right, rightNode.left) && dfs(leftNode.left, rightNode.right);
 };
 
-//completed after second attempt
+//completed after second attempt 
 var isSymmetric = function (root) {
   if (!root) {
     return true;
