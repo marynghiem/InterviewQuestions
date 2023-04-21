@@ -19,8 +19,6 @@ Example 2:
 Input: root1 = [1], root2 = [1,2]
 Output: [2,2]
  
-
-
 */
 
 var mergeTrees = function (root1, root2) {
