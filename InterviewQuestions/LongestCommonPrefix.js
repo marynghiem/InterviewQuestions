@@ -36,3 +36,19 @@ var longestCommonPrefix = function (strs) {
   }
   return answer;
 };
+const longestCommonPrefix = (strs) => {
+  // create variable answer
+  let answer = "";
+  //loop through the first word by each letter
+  for (let i = 0; i < strs[0].length; i++) {
+    //loop through each word at the same location of the letter
+    for (let j = 1; j < strs.length; j++) {
+      if (strs[0][i] !== strs[j][i]) {
+        return answer;
+      }
+    }
+    //add letter if the words are the same
+    answer = answer + strs[0][i];
+  }
+  return answer;
+};

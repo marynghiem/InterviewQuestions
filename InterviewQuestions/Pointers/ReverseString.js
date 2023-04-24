@@ -30,13 +30,20 @@ var reverseString = function (s) {
 };
 
 const reverseString = (s) => {
+  //create index left and right
   let left = 0;
   let right = s.length - 1;
+  //keeping track of numbers
   let temp;
+  //while loop
   while (left < right) {
+    //use temp to remember left value
     temp = s[left];
+    //swap
     s[left] = s[right];
+    //swap
     s[right] = temp;
+    //increment and decrement left and right values
     left++;
     right--;
   }
