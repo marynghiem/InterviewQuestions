@@ -47,3 +47,37 @@ var addTwoNumbers = function (l1, l2) {
   // }
   return result.next;
 };
+
+var addTwoNumbers = function (l1, l2) {
+  //initialize sum
+  let sum = 0;
+  //create a new listNode
+  let current = new ListNode(0);
+  //initialize answer so that I can return it
+  let answer = current;
+  //create a while loop while l1 or l2 still have nodes
+  while (l1 || l2) {
+    //if there is a node in list 1 then add to the sum and go to the next list node
+    if (l1) {
+      sum += l1.val;
+      l1 = l1.next;
+    }
+    //same thing for list 2
+    if (l2) {
+      sum += l2.val;
+      l2 = l2.next;
+    }
+    //make the next list node be the sum mod 10
+    current.next = new ListNode(sum % 10);
+    // go to the next current
+    current = current.next;
+    //set the sum to 1 or 0 depending if sum is greater than 9 or not
+    sum = sum > 9 ? 1 : 0;
+  }
+  //if there is a sum, then make the next list node equal to 1
+  if (sum) {
+    current.next = new ListNode(sum);
+  }
+  //return answer
+  return answer.next;
+};
