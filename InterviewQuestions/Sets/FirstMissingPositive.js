@@ -35,3 +35,19 @@ var firstMissingPositive = function (nums) {
     }
   }
 };
+
+//completed on own!
+var firstMissingPositive = function (nums) {
+  let set = new Set();
+  for (let i = 0; i < nums.length; i++) {
+    set.add(nums[i]);
+  }
+  let check = 1;
+  while (true) {
+    if (set.has(check)) {
+      check++;
+    } else {
+      return check;
+    }
+  }
+};
