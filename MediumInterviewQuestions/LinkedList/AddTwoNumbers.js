@@ -81,3 +81,28 @@ var addTwoNumbers = function (l1, l2) {
   //return answer
   return answer.next;
 };
+
+//third attempt, forgot about one line of code.
+var addTwoNumbers = function (l1, l2) {
+  let list = new ListNode(0);
+  let answer = list;
+  let sum = 0;
+  while (l1 || l2) {
+    if (l1) {
+      sum += l1.val;
+      l1 = l1.next;
+    }
+    if (l2) {
+      sum += l2.val;
+      l2 = l2.next;
+    }
+    list.next = new ListNode(sum % 10);
+    list = list.next;
+    sum = sum > 9 ? 1 : 0;
+  }
+  // forgot about this line of code.
+  if (sum) {
+    list.next = new ListNode(sum);
+  }
+  return answer.next;
+};
