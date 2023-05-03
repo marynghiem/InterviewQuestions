@@ -28,3 +28,21 @@ var majorityElement = function (nums) {
   }
   return candidate; //return the candidate
 };
+
+var majorityElement = (nums) => {
+  //initialize count;
+  let count = 0;
+  //initialize candidate;
+  let candidate;
+  //loop through numbs
+  for (let i = 0; i < nums.length; i++) {
+    //when the count is 0; make the candidate = to nums[i]
+    if (count === 0) {
+      candidate = nums[i];
+    }
+    //increment count or decrement count depending on whether the next number is equal to candidate
+    count += nums[i] === candidate ? 1 : -1;
+  }
+  //return answer
+  return candidate;
+};

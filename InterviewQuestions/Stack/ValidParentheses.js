@@ -111,7 +111,9 @@ var isValid = function (s) {
       (s[i] === "}" && stack[stack.length - 1] === "{")
     ) {
       stack.pop();
-    } else {
+    }
+    //also forgot about the else in case there was a ")" and theres only one, return false
+    else {
       return false;
     }
   }
