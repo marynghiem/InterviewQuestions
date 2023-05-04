@@ -18,3 +18,27 @@ var isIsomorphic = function (s, t) {
   }
   return true;
 };
+
+var isIsomorphic = function (s, t) {
+  //hash map for s letters and t letters
+  let sLetters = {};
+  let tLetters = {};
+  //loop through all the s letters
+  for (let i = 0; i < s.length; i++) {
+    //if there is that letter in s, but t[i] is not equal to the value in the hash, return false
+    if (s[i] in sLetters && t[i] !== sLetters[s[i]]) {
+      return false;
+    } else {
+      //otherwise add in hash
+      sLetters[s[i]] = t[i];
+    }
+    //same for t hash
+    if (t[i] in tLetters && s[i] !== tLetters[t[i]]) {
+      return false;
+    } else {
+      tLetters[t[i]] = s[i];
+    }
+  }
+  //return true if it makes it through without returning false
+  return true;
+};
