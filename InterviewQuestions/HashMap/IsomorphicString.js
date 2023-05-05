@@ -42,3 +42,21 @@ var isIsomorphic = function (s, t) {
   //return true if it makes it through without returning false
   return true;
 };
+//third attempt
+var isIsomorphic = function (s, t) {
+  let sHash = {};
+  let tHash = {};
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] in sHash && t[i] !== sHash[s[i]]) {
+      return false;
+    } else {
+      sHash[s[i]] = t[i];
+    }
+    if (t[i] in tHash && s[i] !== tHash[t[i]]) {
+      return false;
+    } else {
+      tHash[t[i]] = s[i];
+    }
+  }
+  return true;
+};
