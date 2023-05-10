@@ -99,3 +99,25 @@ const lengthOfLongestSubstring = (s) => {
   }
   return longest;
 };
+
+var lengthOfLongestSubstring = function (s) {
+  //keep track of only unique numbers
+  let seen = new Set();
+  //keeps track of only the biggest
+  let biggest = 0;
+  //keeps track of left
+  let left = 0;
+  //loop through all numbers in s
+  for (let i = 0; i < s.length; i++) {
+    //if seen has that s[i], keep deleting until
+    while (seen.has(s[i])) {
+      seen.delete(s[left]);
+      left++;
+    }
+    //add too seen set
+    seen.add(s[i]);
+    //keeping track of the biggest
+    biggest = Math.max(biggest, seen.size);
+  }
+  return biggest;
+};
